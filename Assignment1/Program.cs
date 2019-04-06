@@ -40,33 +40,36 @@ namespace Deliverable1
                         {
                             break;
                         }
-
-                        if (nameString == null || nameString.Length <= 0 || nameString.Length >= 8)
-                        {
-                            WriteLine("Invalid name, please try enter the name again...");
-                        }
                         else
                         {
-                            while (true) // inner while loop
+                            if (nameString == null || nameString.Length <= 0 || nameString.Length >= 8)
                             {
-                                /* input price 
-                                 * make sure cashier input only contains numbers
-                                 */
-                                WriteLine("Please enter the price of item...");
-                                bool priceCheck = double.TryParse(ReadLine(), out double price);
-                                if (priceCheck == false)
-                                {
-                                    WriteLine("Invalid price, please try again...");
-                                }
-                                else
-                                {
-                                    totalPrice += price;
-                                    itemCount++;
-                                    break;
-                                }
+                                WriteLine("Invalid name, please try enter the name again...");
                             }
+                            else
+                            {
+                                while (true) // inner while loop
+                                {
+                                    /* input price 
+                                     * make sure cashier input only contains numbers
+                                     */
+                                    WriteLine("Please enter the price of item...");
+                                    bool priceCheck = double.TryParse(ReadLine(), out double price);
+                                    if (priceCheck == false)
+                                    {
+                                        WriteLine("Invalid price, please try again...");
+                                    }
+                                    else
+                                    {
+                                        totalPrice += price;
+                                        itemCount++;
+                                        break;
+                                    }
+                                }
 
+                            }
                         }
+                        
 
                     }
 
