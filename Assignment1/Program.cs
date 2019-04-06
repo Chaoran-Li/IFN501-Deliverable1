@@ -55,7 +55,7 @@ namespace Deliverable1
                                      */
                                     WriteLine("Please enter the price of item...");
                                     bool priceCheck = double.TryParse(ReadLine(), out double price);
-                                    if (priceCheck == false)
+                                    if (priceCheck == false || price <= 0)
                                     {
                                         WriteLine("Invalid price, please try again...");
                                     }
